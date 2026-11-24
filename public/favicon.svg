@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="jatinGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6C3BFF" />
+      <stop offset="100%" stop-color="#2878FF" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#jatinGrad)" />
+  <path
+    d="M37 16v21.5c0 6.1-4 10.5-10.2 10.5-4.3 0-7.7-2-9.5-5.3l5.3-3.1c.9 1.6 2.2 2.4 4 2.4 2.6 0 4.1-1.6 4.1-4.7V16H37Z"
+    fill="#FFFFFF"
+  />
+</svg>
