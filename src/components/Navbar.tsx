@@ -104,7 +104,7 @@ export default function Navbar({onOpenResume}: NavbarProps) {
         </div>
       </header>
 
-      {/* Right-Side Slide-Over Navigation Panel (outside <header> so fixed positioning covers full viewport) */}
+      {/* Left-Side Slide-Over Navigation Panel (outside <header> so fixed positioning covers full viewport) */}
       <div
         aria-hidden={!menuOpen}
         className={`fixed inset-0 z-50 transition-[visibility] duration-300 ${
@@ -125,8 +125,8 @@ export default function Navbar({onOpenResume}: NavbarProps) {
           role="dialog"
           aria-modal="true"
           aria-label="Site navigation"
-          className={`fixed top-0 right-0 flex h-full w-full max-w-[320px] sm:max-w-[360px] flex-col justify-between border-l border-[#15172B]/10 bg-[#F8F9FC] p-6 shadow-2xl transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none ${
-            menuOpen ? 'translate-x-0' : 'translate-x-full'
+          className={`fixed top-0 left-0 flex h-full w-full max-w-[320px] sm:max-w-[360px] flex-col justify-between border-r border-[#15172B]/10 bg-[#F8F9FC] p-6 shadow-2xl transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none ${
+            menuOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
         >
           <div>
