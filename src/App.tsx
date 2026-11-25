@@ -9,11 +9,14 @@ import ResumeSection from './components/ResumeSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import ResumeModal from './components/ResumeModal';
+import Preloader from './components/Preloader';
 
 export default function App() {
   const [prefilledSubject, setPrefilledSubject] = useState('');
   const [resumeOpen, setResumeOpen] = useState(false);
   const [autoPrintResume, setAutoPrintResume] = useState(false);
+  const [siteRevealed, setSiteRevealed] = useState(false);
+  const [preloaderRemoved, setPreloaderRemoved] = useState(false);
 
   const jumpToContactWithSubject = (subject: string) => {
     setPrefilledSubject(subject);
@@ -34,7 +37,11 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#F8F9FC] text-[#15172B]">
-      <div className="print:hidden">
+      <div
+        className={`print:hidden transition-opacity duration-500 ease-out motion-reduce:transition-none ${
+          siteRevealed ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
         <Navbar onOpenResume={jumpToResumeSection} />
         <main>
           <Hero />
@@ -70,6 +77,12 @@ export default function App() {
           setResumeOpen(false);
         }}
       />
+      {!preloaderRemoved && (
+        <Preloader
+          onFadeStart={() => setSiteRevealed(true)}
+          onComplete={() => setPreloaderRemoved(true)}
+        />
+      )}
     </div>
   );
 }
